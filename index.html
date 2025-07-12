@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPCK PWA App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#317EFB" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker registered'))
+        .catch(err => console.error('❌ SW registration failed:', err));
+    }
+  </script>
+</head>
+<body>
+  <div class="app-container">
+    <h1>📱 Netlify PWA App</h1>
+    <p>This is a full PWA hosted on Netlify!</p>
+    <button onclick="alert('✅ Simulated backend response: Hello from mock backend!')">
+      Fetch Mock API
+    </button>
+  </div>
+</body>
+</html>
